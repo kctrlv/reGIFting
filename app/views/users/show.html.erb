@@ -1,0 +1,16 @@
+<h1> Thanks for coming <%= @user.name %> </h1>
+
+<% if @gift.gif %>
+  <% if @gift.gif.include? 'http://media' %>
+    <img src=<%= @gift.gif %> alt="">
+  <% else %>
+    <img src=<%= @gift.giphy_url  %> alt="">
+  <% end %>
+  <%= button_to 'reGIFt', '/reGIFt' %>
+<% else %>
+  <%= form_for @gift, url: gift_path(@gift) do |f| %>
+   <%= f.label :gif %>
+   <%= f.text_field :gif %>
+   <%= f.submit "Create Gift" %>
+ <% end %>
+<% end %>

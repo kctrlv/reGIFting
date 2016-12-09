@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  color: white;
+  background-image: url("http://media.boingboing.net/wp-content/uploads/2015/10/lovable.jpg")
+}
+
+a {
+  color: white
+}
