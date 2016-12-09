@@ -6,8 +6,8 @@ class GiftsController < ApplicationController
 
   def regift
     mygif = current_user.gift.gif
-    current_user.gift.destroy
     Gift.all.sample.update_attribute(:gif, mygif)
+    current_user.gift.destroy
     redirect_to user_path(current_user.id)
   end
 end
